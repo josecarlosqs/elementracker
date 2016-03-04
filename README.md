@@ -5,8 +5,8 @@ Este plugin detecta cuando un elemento entra y sale de vista en un contenedor(vi
 ## Parametros ##
 -  **wrapper** (String) : Contenedor de los elementos a trackear - [Default: window]
 -  **currentClass** (String) : Este parametro define el nombre de la clase que sera añadida al elemento actual en el viewport - [Default: active]  
--  **enter** (Function) : Funcion que se ejecutara una vez el elemento este dentro del viewport. 
--  **leave** (Function) : Funcion que se ejecutara cuando el elemento actual este fuera del viewport.  
+-  **enter** (Function) : Funcion que se ejecutara una vez el elemento este dentro del viewport, envia por parametro el objeto que acaba de entrar al viewport.
+-  **leave** (Function) : Funcion que se ejecutara cuando el elemento actual este fuera del viewport, envia por parametro el objeto que acaba de salir del viewport.
 -  **in** (Function) : Funcion que se ejecutara cada vez que se haga scroll y el elemento este dentro del viewport.  
 
 ## Modo de uso ##
@@ -16,6 +16,11 @@ Este plugin detecta cuando un elemento entra y sale de vista en un contenedor(vi
 ```
 - Seleccionar los elementos a seguir con jquery y llamar a la funcion elementracker.
 ```javascript
+var atributos = {
+enter: function(o){
+  console.log("Acaba de entrar al viewport el elemento con ID ",$(o).attr("id"));
+}
+};
 $('.items').elementracker(atributos);
 ```
 
