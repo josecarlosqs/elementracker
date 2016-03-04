@@ -7,8 +7,6 @@
             leave: function(obj){},
             in: function(obj){}
         }, options );
- 
-        console.log($(this).position().top);
 
         return this.each(function() {
         	var obj = $(this);
